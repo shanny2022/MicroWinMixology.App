@@ -1,133 +1,109 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using MicroWinMixology.App.Models;
 using MicroWinMixology.App.Services;
-using Uno.Extensions.Reactive;
 
 namespace MicroWinMixology.App.Presentation.DrinkDetail
 {
     public partial class DrinkDetailFeature
     {
-        private readonly MicroWinService _microWinService;
+        private readonly MicroWinService _service;
 
-        public DrinkDetailFeature(MicroWinService microWinService)
+        public DrinkDetailFeature(MicroWinService service)
         {
-            _microWinService = microWinService;
+            _service = service;
         }
 
-        public async IAsyncEnumerable<IState<DrinkDetailModel>> LoadDrink(
-            IState<DrinkDetailModel> state,
+        // Load a drink by id and prepare the detail model
+        public async IAsyncEnumerable<DrinkDetailModel> LoadDrink(
             string drinkId,
             [EnumeratorCancellation] CancellationToken ct = default)
         {
-            yield return state with
-            {
-                Value = state.Value with
-                {
-                    IsBusy = true
-                }
-            };
+            // Initial busy state
+            var model = DrinkDetailModel.Default with { IsBusy = true };
+            yield return model;
 
-            try
-            {
-                // MicroWinService doesn't have a direct GetById, so use GetDrinksByCategory(null)
-                var all = _microWinService.GetDrinksByCategory(null);
-                var selected = all.FirstOrDefault(d => d.Id == drinkId);
+            // We use GetDrinksByCategory(null) to get all drinks
+            var all = _service.GetDrinksByCategory(null);
+            var selected = all.FirstOrDefault(d => d.Id == drinkId);
 
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        SelectedDrink = selected,
-                        IsRunning = false,
-                        RemainingSeconds = (selected?.DurationMinutes ?? 5) * 60,
-                        CurrentStepIndex = 0
-                    }
-                };
-            }
-            catch (Exception ex)
+            if (selected is null)
             {
-                // You might add error state to DrinkDetailModel if needed.
-                yield return state;
-            }
-        }
-
-        public async IAsyncEnumerable<IState<DrinkDetailModel>> StartRitual(
-            IState<DrinkDetailModel> state,
-            [EnumeratorCancellation] CancellationToken ct = default)
-        {
-            if (state.Value.SelectedDrink is null)
-            {
-                yield return state;
+                // Not found: just stop being busy
+                model = model with { IsBusy = false };
+                yield return model;
                 yield break;
             }
 
-            yield return state with
+            model = model with
             {
-                Value = state.Value with
-                {
-                    IsRunning = true
-                }
+                IsBusy = false,
+                SelectedDrink = selected,
+                IsRunning = false,
+                RemainingSeconds = selected.DurationMinutes * 60,
+                CurrentStepIndex = 0
             };
 
-            int totalSeconds = state.Value.RemainingSeconds;
-            for (int i = totalSeconds; i >= 0; i--)
+            yield return model;
+
+            await Task.CompletedTask;
+        }
+
+        // Start the ritual timer
+        public async IAsyncEnumerable<DrinkDetailModel> StartRitual(
+            DrinkDetailModel current,
+            [EnumeratorCancellation] CancellationToken ct = default)
+        {
+            if (current.SelectedDrink is null)
+            {
+                yield return current;
+                yield break;
+            }
+
+            var model = current with { IsRunning = true };
+            yield return model;
+
+            for (int i = model.RemainingSeconds; i >= 0; i--)
             {
                 if (ct.IsCancellationRequested)
                 {
                     yield break;
                 }
 
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        RemainingSeconds = i
-                    }
-                };
+                model = model with { RemainingSeconds = i };
+                yield return model;
 
                 await Task.Delay(1000, ct);
             }
 
-            // Ritual complete
-            yield return state with
-            {
-                Value = state.Value with
-                {
-                    IsRunning = false,
-                    RemainingSeconds = 0
-                }
-            };
+            model = model with { IsRunning = false, RemainingSeconds = 0 };
+            yield return model;
         }
 
-        public async IAsyncEnumerable<IState<DrinkDetailModel>> AdvanceStep(
-            IState<DrinkDetailModel> state,
+        // Move to the next step in the ritual
+        public async IAsyncEnumerable<DrinkDetailModel> AdvanceStep(
+            DrinkDetailModel current,
             [EnumeratorCancellation] CancellationToken ct = default)
         {
-            var drink = state.Value.SelectedDrink;
+            var drink = current.SelectedDrink;
             if (drink is null || drink.Steps is null || drink.Steps.Count == 0)
             {
-                yield return state;
+                yield return current;
                 yield break;
             }
 
-            var nextIndex = state.Value.CurrentStepIndex + 1;
+            var nextIndex = current.CurrentStepIndex + 1;
             if (nextIndex >= drink.Steps.Count)
             {
                 nextIndex = drink.Steps.Count - 1;
             }
 
-            yield return state with
-            {
-                Value = state.Value with
-                {
-                    CurrentStepIndex = nextIndex
-                }
-            };
+            var model = current with { CurrentStepIndex = nextIndex };
+            yield return model;
 
             await Task.CompletedTask;
         }

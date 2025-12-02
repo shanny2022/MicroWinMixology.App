@@ -1,22 +1,12 @@
-﻿using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Microsoft.UI.Xaml.Controls;
 
-namespace MicroWinMixology.App.Presentation.Home;
-
-public sealed partial class MainPage : Page
+namespace MicroWinMixology.App.Presentation
 {
-    private CancellationTokenSource _cts = new();
-
-    public MainPage()
+    public sealed partial class MainPage : Page
     {
-        this.InitializeComponent();
-
-        this.WhenChanged(x => x.ViewModel).Execute(async vm =>
+        public MainPage()
         {
-            if (vm?.Feature is not null)
-                await vm.Feature.LoadAsync(_cts.Token);
-        });
+            this.InitializeComponent();
+        }
     }
 }

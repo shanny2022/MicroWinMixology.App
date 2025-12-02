@@ -10,6 +10,8 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Reflection.AssemblyMetadataAttribute("UnoMCPProcessorPath", ("/Users/shuntoriareid/.nuget/packages/uno.ui.app.mcp/1.0.10/buildTransitive/../too" +
+    "ls/devserver/Uno.UI.App.Mcp.Server.dll"))]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicroWinMixology.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("MicroWinMixology.App powered by Uno Platform.")]

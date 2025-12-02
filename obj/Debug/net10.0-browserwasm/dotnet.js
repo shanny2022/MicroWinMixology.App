@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "MicroWinMixology.App",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-IdpeN80NOeKOW8YtrIlPLnsqJnKaa4ykHzFgadvxigQ=",
+    "hash": "sha256-OjpqFgQz5XkBpgtNj0SqtAFl+FxgBmNKwCSg2jHz0uA=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.czothjk52h.js"
@@ -18,8 +18,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
     ],
     "wasmNative": [
       {
-        "name": "dotnet.native.hk24m1dggl.wasm",
-        "integrity": "sha256-/88CSwGcK3Gh/neE621mPKSrKP5X5bnMPanTJf5RfSs="
+        "name": "dotnet.native.jo3d0j9d4m.wasm",
+        "integrity": "sha256-HbA/HGhNmGeEQZZlASAuno5mqLTYYe56hCBj27jFNAs="
       }
     ],
     "icu": [
@@ -1734,8 +1734,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MicroWinMixology.App.wasm",
-        "name": "MicroWinMixology.App.4ng1pv4ehl.wasm",
-        "integrity": "sha256-gF+EYShBx4QHUwJRBziay542hIhNLlrcKD9MTK9WUTI="
+        "name": "MicroWinMixology.App.t31vq78t2d.wasm",
+        "integrity": "sha256-Wa12kTrr9AFhbkhzNWap3l5JhixQjPkAVKT8x0p/ZHs="
       }
     ],
     "pdb": [
@@ -1811,8 +1811,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "MicroWinMixology.App.pdb",
-        "name": "MicroWinMixology.App.9q87m90ihw.pdb",
-        "integrity": "sha256-8UFKeR+g/6RfIzG9WX6g7dgFHcZrlwXhjlR/WHDOOyI="
+        "name": "MicroWinMixology.App.5pwrqjbbb3.pdb",
+        "integrity": "sha256-tysOtRF/g6TbBWP4iQZFs9MVYQr3qadRdOPaHzY4/7o="
       }
     ],
     "satelliteResources": {

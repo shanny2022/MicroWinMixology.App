@@ -48,16 +48,16 @@ build_property.UnoRuntimeIdentifier = Skia
 build_property.UnoWinRTRuntimeIdentifier = 
 build_property.UnoUIRuntimeIdentifier = 
 build_property.UnoHotReloadMode = 
-build_property.SolutionFileName = *Undefined*
+build_property.SolutionFileName = MicroWinMixology.App.sln
 build_property.LangName = 
 build_property.LangID = 
-build_property.SolutionDir = *Undefined*
-build_property.SolutionExt = *Undefined*
+build_property.SolutionDir = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/
+build_property.SolutionExt = .sln
 build_property.UseHostCompilerIfAvailable = true
 build_property.DefineExplicitDefaults = 
 build_property.Platform = AnyCPU
-build_property.SolutionPath = *Undefined*
-build_property.SolutionName = *Undefined*
+build_property.SolutionPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App.sln
+build_property.SolutionName = MicroWinMixology.App
 build_property.VSIDEResolvedNonMSBuildProjectOutputs = 
 build_property.DevEnvDir = *Undefined*
 build_property.MSBuildVersion = 18.0.2
@@ -110,6 +110,22 @@ build_metadata.AdditionalFiles.Link =
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/UnoImage.inputs
 build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/UnoImage.inputs
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml]
+build_metadata.AdditionalFiles.SourceItemGroup = Page
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml
+build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml]
+build_metadata.AdditionalFiles.SourceItemGroup = Page
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml
+build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml
 build_metadata.AdditionalFiles.XamlRuntime = 
 
 [/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/MainPage.xaml]

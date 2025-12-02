@@ -1,6 +1,4 @@
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Navigation;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Uno.Extensions;
@@ -12,9 +10,10 @@ using Uno.Toolkit.UI;
 using Uno.Resizetizer;
 
 using MicroWinMixology.App.Models;
-using MicroWinMixology.App.Services.Endpoints;
+using MicroWinMixology.App.Presentation;
 using MicroWinMixology.App.Presentation.Home;
 using MicroWinMixology.App.Presentation.DrinkDetail;
+using MicroWinMixology.App.Services;
 
 namespace MicroWinMixology.App;
 
@@ -53,13 +52,12 @@ public partial class App : Application
                 .UseLocalization()
                 .UseHttp((context, services) =>
                 {
-#if DEBUG
-                    services.AddTransient<DelegatingHandler, DebugHttpHandler>();
-#endif
+                    // For now we do not add extra DelegatingHandlers.
+                    // HttpClient for MicroWinService will be configured below.
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    // Register MicroWin service
+                    // Register MicroWinService with an HttpClient factory
                     services.AddHttpClient<MicroWinService>();
                     services.AddSingleton<MicroWinService>();
                 })
@@ -71,9 +69,11 @@ public partial class App : Application
 #if DEBUG
         MainWindow.UseStudio();
 #endif
+
         MainWindow.SetWindowIcon();
 
-        Host = await builder.NavigateAsync<Shell>();
+       Host = await builder.NavigateAsync<HomePage>();
+
     }
 
     private static void RegisterRoutes(IViewRegistry views, IRouteRegistry routes)
@@ -81,11 +81,16 @@ public partial class App : Application
         views.Register(
             new ViewMap(ViewModel: typeof(ShellModel)),
             new ViewMap<MainPage, MainModel>(),
-            new DataViewMap<SecondPage, SecondModel, Entity>()
+            new DataViewMap<SecondPage, SecondModel, Entity>(),
+
+            new ViewMap<HomePage, HomeModel>(),
+            new DataViewMap<DrinkDetailPage, DrinkDetailModel, MicroWinDrink>()
         );
 
         routes.Register(
-            new RouteMap("", View: views.FindByViewModel<ShellModel>())
+            new RouteMap("", View: views.FindByViewModel<ShellModel>()),
+            new RouteMap("Home", View: views.FindByViewModel<HomeModel>()),
+            new RouteMap("DrinkDetail", View: views.FindByViewModel<DrinkDetailModel>())
         );
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MicroWinMixology.App.Models;
 
+
 namespace MicroWinMixology.App.Presentation.Home;
 
 public record HomeModel(
@@ -22,4 +23,3 @@ public record HomeModel(
             Error: string.Empty
         );
 }
-

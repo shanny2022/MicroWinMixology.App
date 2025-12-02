@@ -118,6 +118,22 @@ build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixol
 build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-android/UnoImage.inputs
 build_metadata.AdditionalFiles.XamlRuntime = 
 
+[/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml]
+build_metadata.AdditionalFiles.SourceItemGroup = Page
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml
+build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/DrinkDetail/DrinkDetailPage.xaml
+build_metadata.AdditionalFiles.XamlRuntime = 
+
+[/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml]
+build_metadata.AdditionalFiles.SourceItemGroup = Page
+build_metadata.AdditionalFiles.Link = 
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.FullPath = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml
+build_metadata.AdditionalFiles.Identity = /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/Home/HomePage.xaml
+build_metadata.AdditionalFiles.XamlRuntime = 
+
 [/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/Presentation/MainPage.xaml]
 build_metadata.AdditionalFiles.SourceItemGroup = Page
 build_metadata.AdditionalFiles.Link = 

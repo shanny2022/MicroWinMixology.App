@@ -1,0 +1,42 @@
+<Page
+    x:Class="MicroWinMixology.App.Presentation.DrinkDetail.DrinkDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Spacing="4">
+            <TextBlock Text="Drink ritual" FontSize="12" Opacity="0.7" />
+            <TextBlock Text="Deep Focus Latte" FontSize="26" FontWeight="SemiBold" />
+        </StackPanel>
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,12,0,0"
+            Text="This screen will eventually show step by step instructions synced to a tiny timer, plus AI generated tweaks based on your focus window."
+            TextWrapping="Wrap"
+            Opacity="0.8" />
+
+        <StackPanel Grid.Row="2" Margin="0,16,0,0">
+            <TextBlock Text="Timer" FontSize="18" FontWeight="SemiBold" />
+            <TextBlock Text="00:00" FontSize="32" FontWeight="Bold" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Margin="0,16,0,0" Spacing="8">
+            <TextBlock Text="Steps" FontSize="18" FontWeight="SemiBold" />
+
+            <TextBlock Text="1. Find a calm space and place your cup down." Opacity="0.85" TextWrapping="Wrap" />
+            <TextBlock Text="2. Breathe in for four counts while the drink cools slightly." Opacity="0.85" TextWrapping="Wrap" />
+            <TextBlock Text="3. On each sip, choose exactly one micro task to complete." Opacity="0.85" TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Page>

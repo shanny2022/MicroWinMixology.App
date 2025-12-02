@@ -306,3 +306,4 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/MicroWinMixology.App.pdb
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/MicroWinMixology.App.genruntimeconfig.cache
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/ref/MicroWinMixology.App.dll
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-desktop/MicroWinMixology.App.sourcelink.json

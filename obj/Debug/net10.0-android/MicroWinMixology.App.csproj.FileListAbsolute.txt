@@ -3137,3 +3137,4 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-android/stamp/_GenerateJavaStubs.stamp
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-android/stamp/_GeneratePackageManagerJava.stamp
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-android/stamp/_ResolveLibraryProjectImports.stamp
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-android/MicroWinMixology.App.sourcelink.json

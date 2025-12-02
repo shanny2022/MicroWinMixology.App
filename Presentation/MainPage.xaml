@@ -1,141 +1,25 @@
-﻿<Page
-    x:Class="MicroWinMixology.App.Presentation.Home.MainPage"
+<Page
+    x:Class="MicroWinMixology.App.Presentation.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:use="using:Uno.Extensions.Reactive.UI"
-    mc:Ignorable="d">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Spacing="12">
 
-        <!-- Header -->
-        <StackPanel Grid.Row="0" Padding="24">
-            <TextBlock Text="MicroWin Mixology"
-                       FontSize="28"
-                       FontWeight="Bold"/>
-            <TextBlock Text="Pick a shot of progress"
-                       FontSize="16"
-                       Opacity="0.75"/>
-        </StackPanel>
+            <TextBlock
+                Text="MicroWin Mixology"
+                FontSize="32"
+                FontWeight="Bold"
+                HorizontalAlignment="Center" />
 
-        <!-- Category chips -->
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto">
-            <StackPanel Orientation="Horizontal"
-                        Padding="24"
-                        Spacing="8">
-                <Button Content="Focus"
-                        use:Action.Command="{Binding Feature.SelectCategoryAsync}"
-                        use:Action.Parameter="Focus"/>
+            <TextBlock
+                Text="Home screen placeholder (build test)"
+                FontSize="16"
+                HorizontalAlignment="Center" />
 
-                <Button Content="Calm"
-                        use:Action.Command="{Binding Feature.SelectCategoryAsync}"
-                        use:Action.Parameter="Calm"/>
-
-                <Button Content="Social"
-                        use:Action.Command="{Binding Feature.SelectCategoryAsync}"
-                        use:Action.Parameter="Social"/>
-            </StackPanel>
-        </ScrollViewer>
-
-        <!-- Main content -->
-        <ScrollViewer Grid.Row="2">
-            <StackPanel Padding="24" Spacing="24">
-
-                <!-- Featured drinks -->
-                <StackPanel>
-                    <TextBlock Text="Featured"
-                               FontSize="20"
-                               FontWeight="SemiBold"/>
-                    <ItemsControl ItemsSource="{Binding State.Featured}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate x:DataType="models:MicroWinDrink">
-                                <Border Background="#281812"
-                                        CornerRadius="16"
-                                        Padding="16"
-                                        Margin="0,6">
-                                    <StackPanel>
-                                        <TextBlock Text="{x:Bind Name}"
-                                                   FontSize="18"
-                                                   Foreground="White"/>
-                                        <TextBlock Text="{x:Bind Tagline}"
-                                                   Foreground="White"
-                                                   Opacity="0.8"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-
-                <!-- Category drinks -->
-                <StackPanel>
-                    <TextBlock Text="For your mood"
-                               FontSize="20"
-                               FontWeight="SemiBold"/>
-
-                    <ItemsControl ItemsSource="{Binding State.CategoryDrinks}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate x:DataType="models:MicroWinDrink">
-                                <Border Background="#3A221B"
-                                        CornerRadius="12"
-                                        Padding="16"
-                                        Margin="0,6">
-                                    <StackPanel>
-                                        <TextBlock Text="{x:Bind Name}"
-                                                   FontSize="16"
-                                                   Foreground="White"/>
-                                        <TextBlock Text="{x:Bind Tagline}"
-                                                   Foreground="White"
-                                                   Opacity="0.8"/>
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-
-                <!-- Tasks -->
-                <StackPanel>
-                    <TextBlock Text="Today’s Micro Tasks"
-                               FontSize="20"
-                               FontWeight="SemiBold"/>
-
-                    <ItemsControl ItemsSource="{Binding State.Tasks}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate x:DataType="models:MicroWinTask">
-                                <StackPanel Orientation="Horizontal"
-                                            Spacing="8"
-                                            Margin="0,4">
-                                    <Ellipse Width="8" Height="8" Fill="Green"/>
-                                    <TextBlock Text="{x:Bind Title}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </StackPanel>
-        </ScrollViewer>
-
-        <!-- Errors & Busy -->
-        <StackPanel Grid.Row="3"
-                    Padding="24"
-                    Orientation="Horizontal"
-                    Spacing="12">
-
-            <ProgressRing IsActive="{Binding State.IsBusy}"
-                          Visibility="{Binding State.IsBusy, Converter={StaticResource BoolToVisibility}}"/>
-
-            <TextBlock Text="{Binding State.Error}"
-                       Foreground="Red"
-                       TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
-
 </Page>

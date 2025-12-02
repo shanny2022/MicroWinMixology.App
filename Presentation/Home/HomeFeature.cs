@@ -1,78 +1,78 @@
 using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using MicroWinMixology.App.Models;
 using MicroWinMixology.App.Services;
-using Uno.Extensions.Reactive;
-using Uno.Extensions.Reactive.Commands;
 
-namespace MicroWinMixology.App.Presentation.Home;
-
-public sealed partial class HomeFeature
+namespace MicroWinMixology.App.Presentation.Home
 {
-    private readonly MicroWinService _service;
-
-    public HomeFeature(MicroWinService service)
+    public partial class HomeFeature
     {
-        _service = service;
-    }
+        private readonly MicroWinService _service;
 
-    public IState<HomeModel> State => State<HomeModel>.Value(HomeModel.Empty);
-
-    public async Task LoadAsync(CancellationToken ct)
-    {
-        try
+        public HomeFeature(MicroWinService service)
         {
-            await State.UpdateAsync(
-                model => model with { IsBusy = true, Error = "" },
-                ct
-            );
+            _service = service;
+        }
 
+        // Called to load the initial home data
+        public async IAsyncEnumerable<HomeModel> Load(
+            [EnumeratorCancellation] CancellationToken ct = default)
+        {
+            // Start in a busy state
+            var model = HomeModel.Empty with { IsBusy = true };
+            yield return model;
+
+            // Get data from your service
             var featured = _service.GetFeaturedDrinks();
-            var cats = _service.GetDrinksByCategory("Focus");
+            var categoryDrinks = _service.GetDrinksByCategory(model.SelectedCategory);
             var tasks = await _service.GetRandomMicroTasksAsync(ct);
 
-            await State.UpdateAsync(
-                model => model with
-                {
-                    Featured = featured,
-                    CategoryDrinks = cats,
-                    Tasks = tasks,
-                    SelectedCategory = "Focus",
-                    IsBusy = false
-                },
-                ct
-            );
+            // Updated, ready state
+            model = model with
+            {
+                IsBusy = false,
+                Featured = featured,
+                CategoryDrinks = categoryDrinks,
+                Tasks = tasks,
+                Error = string.Empty
+            };
+
+            yield return model;
         }
-        catch (Exception ex)
+
+        // Called when the user changes category (Focus / Calm / Social)
+        public async IAsyncEnumerable<HomeModel> ChangeCategory(
+            HomeModel current,
+            string category,
+            [EnumeratorCancellation] CancellationToken ct = default)
         {
-            await State.UpdateAsync(
-                model => model with
-                {
-                    IsBusy = false,
-                    Error = ex.Message
-                },
-                ct
-            );
+            // Show loading state
+            var model = current with
+            {
+                IsBusy = true,
+                SelectedCategory = category
+            };
+
+            yield return model;
+
+            // Get drinks for the selected category
+            var drinks = _service.GetDrinksByCategory(category);
+
+            model = model with
+            {
+                IsBusy = false,
+                CategoryDrinks = drinks,
+                Error = string.Empty
+            };
+
+            yield return model;
+
+            // Just to satisfy async
+            await Task.CompletedTask;
         }
-    }
-
-    public async Task SelectCategoryAsync(string category, CancellationToken ct)
-    {
-        await State.UpdateAsync(m => m with
-        {
-            IsBusy = true
-        }, ct);
-
-        var drinks = _service.GetDrinksByCategory(category);
-
-        await State.UpdateAsync(m => m with
-        {
-            SelectedCategory = category,
-            CategoryDrinks = drinks,
-            IsBusy = false
-        }, ct);
     }
 }
 

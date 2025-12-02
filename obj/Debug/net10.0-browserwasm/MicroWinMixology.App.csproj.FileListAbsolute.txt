@@ -441,7 +441,6 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.js
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.js.map
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.native.czothjk52h.js
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.native.hk24m1dggl.wasm
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.runtime.js.map
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.runtime.o0qy896u8v.js
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/es/System.ServiceModel.Http.resources.kxqfu5153g.wasm
@@ -651,7 +650,6 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/package_32443111696b08ee1931b1e4a4fab0ec64909b62/uno.ai.xamlgeneration.assets/Microsoft.SemanticKernel.Core.dll.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/Microsoft.Extensions.DependencyInjection.Abstractions.qzg75988t9.wasm.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/Uno.UI.Runtime.Skia.WebAssembly.Browser.lj0q54i4o9.wasm.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.native.hk24m1dggl.wasm.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/pl/System.ServiceModel.Primitives.resources.mk9c0l3h8j.wasm.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/Microsoft.Extensions.Localization.Abstractions.udk0of6qka.wasm.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/System.Diagnostics.Tracing.uyjvspoaee.wasm.gz
@@ -2472,7 +2470,6 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/3u6gujild8-{0}-5ipweew5fc-5ipweew5fc.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/dg5u9d63u4-{0}-5ipweew5fc-5ipweew5fc.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/hbeowvxypu-{0}-pcb19qfv8l-pcb19qfv8l.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/afw5k7mh37-{0}-hk24m1dggl-hk24m1dggl.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/uc1645t3x6-{0}-czothjk52h-czothjk52h.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/ccwzcl310e-{0}-25cjbb3zf5-25cjbb3zf5.gz
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/staticwebassets.build.json
@@ -2485,11 +2482,15 @@
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/refint/MicroWinMixology.App.dll
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/MicroWinMixology.App.pdb
 /Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/ref/MicroWinMixology.App.dll
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.4ng1pv4ehl.wasm
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.9q87m90ihw.pdb
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.4ng1pv4ehl.wasm.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.9q87m90ihw.pdb.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/d3b2cvz2cj-{0}-v2bbc8orfk-v2bbc8orfk.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/h4zrkzax5f-{0}-4ng1pv4ehl-4ng1pv4ehl.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/ysqgdh5xhz-{0}-9q87m90ihw-9q87m90ihw.gz
-/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/utwlt47s7p-{0}-xeqf890428-xeqf890428.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/MicroWinMixology.App.sourcelink.json
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.5pwrqjbbb3.pdb
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.t31vq78t2d.wasm
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.native.jo3d0j9d4m.wasm
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/dotnet.native.jo3d0j9d4m.wasm.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.t31vq78t2d.wasm.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/bin/Debug/net10.0-browserwasm/wwwroot/_framework/MicroWinMixology.App.5pwrqjbbb3.pdb.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/d3b2cvz2cj-{0}-crhhgpnt4y-crhhgpnt4y.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/afw5k7mh37-{0}-jo3d0j9d4m-jo3d0j9d4m.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/h4zrkzax5f-{0}-t31vq78t2d-t31vq78t2d.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/ysqgdh5xhz-{0}-5pwrqjbbb3-5pwrqjbbb3.gz
+/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/compressed/utwlt47s7p-{0}-2i6qf21u28-2i6qf21u28.gz
