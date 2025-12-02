@@ -1,143 +1,78 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using MicroWinMixology.App.Models;
 using MicroWinMixology.App.Services;
 using Uno.Extensions.Reactive;
+using Uno.Extensions.Reactive.Commands;
 
-namespace MicroWinMixology.App.Presentation.Home
+namespace MicroWinMixology.App.Presentation.Home;
+
+public sealed partial class HomeFeature
 {
-    public partial class HomeFeature : IAsyncEnumerable<IState<HomeModel>>
+    private readonly MicroWinService _service;
+
+    public HomeFeature(MicroWinService service)
     {
-        private readonly MicroWinService _microWinService;
+        _service = service;
+    }
 
-        public HomeFeature(MicroWinService microWinService)
+    public IState<HomeModel> State => State<HomeModel>.Value(HomeModel.Empty);
+
+    public async Task LoadAsync(CancellationToken ct)
+    {
+        try
         {
-            _microWinService = microWinService;
+            await State.UpdateAsync(
+                model => model with { IsBusy = true, Error = "" },
+                ct
+            );
+
+            var featured = _service.GetFeaturedDrinks();
+            var cats = _service.GetDrinksByCategory("Focus");
+            var tasks = await _service.GetRandomMicroTasksAsync(ct);
+
+            await State.UpdateAsync(
+                model => model with
+                {
+                    Featured = featured,
+                    CategoryDrinks = cats,
+                    Tasks = tasks,
+                    SelectedCategory = "Focus",
+                    IsBusy = false
+                },
+                ct
+            );
         }
-
-        // Messages
-        public async IAsyncEnumerable<IState<HomeModel>> LoadHome(
-            IState<HomeModel> state,
-            [EnumeratorCancellation] CancellationToken ct = default)
+        catch (Exception ex)
         {
-            // set IsBusy
-            yield return state with
-            {
-                Value = state.Value with { IsBusy = true, ErrorMessage = string.Empty }
-            };
-
-            try
-            {
-                var featured = _microWinService.GetFeaturedDrinks();
-                var category = state.Value.SelectedCategory;
-                var categoryDrinks = _microWinService.GetDrinksByCategory(category);
-                var tasks = await _microWinService.GetRandomMicroTasksAsync(ct);
-
-                yield return state with
+            await State.UpdateAsync(
+                model => model with
                 {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        FeaturedDrinks = featured,
-                        CategoryDrinks = categoryDrinks,
-                        SuggestedTasks = tasks
-                    }
-                };
-            }
-            catch (Exception ex)
-            {
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        ErrorMessage = ex.Message
-                    }
-                };
-            }
-        }
-
-        public async IAsyncEnumerable<IState<HomeModel>> ChangeCategory(
-            IState<HomeModel> state,
-            string newCategory,
-            [EnumeratorCancellation] CancellationToken ct = default)
-        {
-            // Immediately update selected category and set busy flag
-            yield return state with
-            {
-                Value = state.Value with
-                {
-                    IsBusy = true,
-                    SelectedCategory = newCategory,
-                    ErrorMessage = string.Empty
-                }
-            };
-
-            try
-            {
-                var categoryDrinks = _microWinService.GetDrinksByCategory(newCategory);
-
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        CategoryDrinks = categoryDrinks
-                    }
-                };
-            }
-            catch (Exception ex)
-            {
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        ErrorMessage = ex.Message
-                    }
-                };
-            }
-        }
-
-        public async IAsyncEnumerable<IState<HomeModel>> RefreshTasks(
-            IState<HomeModel> state,
-            [EnumeratorCancellation] CancellationToken ct = default)
-        {
-            yield return state with
-            {
-                Value = state.Value with
-                {
-                    IsBusy = true,
-                    ErrorMessage = string.Empty
-                }
-            };
-
-            try
-            {
-                var tasks = await _microWinService.GetRandomMicroTasksAsync(ct);
-
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        SuggestedTasks = tasks
-                    }
-                };
-            }
-            catch (Exception ex)
-            {
-                yield return state with
-                {
-                    Value = state.Value with
-                    {
-                        IsBusy = false,
-                        ErrorMessage = ex.Message
-                    }
-                };
-            }
+                    IsBusy = false,
+                    Error = ex.Message
+                },
+                ct
+            );
         }
     }
+
+    public async Task SelectCategoryAsync(string category, CancellationToken ct)
+    {
+        await State.UpdateAsync(m => m with
+        {
+            IsBusy = true
+        }, ct);
+
+        var drinks = _service.GetDrinksByCategory(category);
+
+        await State.UpdateAsync(m => m with
+        {
+            SelectedCategory = category,
+            CategoryDrinks = drinks,
+            IsBusy = false
+        }, ct);
+    }
 }
+

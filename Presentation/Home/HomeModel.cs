@@ -1,24 +1,25 @@
 using System.Collections.Generic;
 using MicroWinMixology.App.Models;
 
-namespace MicroWinMixology.App.Presentation.Home
+namespace MicroWinMixology.App.Presentation.Home;
+
+public record HomeModel(
+    bool IsBusy,
+    string SelectedCategory,
+    List<MicroWinDrink> Featured,
+    List<MicroWinDrink> CategoryDrinks,
+    List<MicroWinTask> Tasks,
+    string Error
+)
 {
-    public record HomeModel(
-        bool IsBusy,
-        string SelectedCategory,
-        string ErrorMessage,
-        IReadOnlyList<MicroWinDrink> FeaturedDrinks,
-        IReadOnlyList<MicroWinDrink> CategoryDrinks,
-        IReadOnlyList<MicroWinTask> SuggestedTasks
-    )
-    {
-        public static HomeModel Default => new HomeModel(
+    public static HomeModel Empty =>
+        new(
             IsBusy: false,
             SelectedCategory: "Focus",
-            ErrorMessage: string.Empty,
-            FeaturedDrinks: new List<MicroWinDrink>(),
+            Featured: new List<MicroWinDrink>(),
             CategoryDrinks: new List<MicroWinDrink>(),
-            SuggestedTasks: new List<MicroWinTask>()
+            Tasks: new List<MicroWinTask>(),
+            Error: string.Empty
         );
-    }
 }
+
