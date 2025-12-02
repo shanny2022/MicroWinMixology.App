@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "MicroWinMixology.App",
+  "display": "standalone",
+  "name": "MicroWinMixology.App",
+  "short_name": "MicroWinMixology.App",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

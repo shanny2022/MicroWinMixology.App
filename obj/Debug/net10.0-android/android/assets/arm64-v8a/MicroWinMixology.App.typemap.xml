@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="MicroWinMixology.App" mvid="8b7425cef414487c9f0a28eae5394ea3">
+  <java-to-managed>
+    <entry java-name="crc64db4b9ce111039921/Application" managed-name="MicroWinMixology.App.Droid.Application, MicroWinMixology.App" managed-type-token-id="33555103" />
+    <entry java-name="crc64db4b9ce111039921/MainActivity" managed-name="MicroWinMixology.App.Droid.MainActivity, MicroWinMixology.App" managed-type-token-id="33555104" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64db4b9ce111039921/Application" managed-name="MicroWinMixology.App.Droid.Application, MicroWinMixology.App" managed-type-token-id="33555103" />
+    <entry java-name="crc64db4b9ce111039921/MainActivity" managed-name="MicroWinMixology.App.Droid.MainActivity, MicroWinMixology.App" managed-type-token-id="33555104" />
+  </managed-to-java>
+</api>

@@ -1,0 +1,12 @@
+-O0
+-lidbfs.js
+-v
+-g
+-fwasm-exceptions
+-DDISABLE_PERFTRACING_LISTEN_PORTS=1
+-DLINK_ICALLS=1
+-DGEN_PINVOKE=1
+-emit-llvm
+"-I/Users/shuntoriareid/dev/MicroWinMixology/MicroWinMixology.App/MicroWinMixology.App/obj/Debug/net10.0-browserwasm/wasm/for-build"
+"-I/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Runtime.Mono.browser-wasm/10.0.0/runtimes/browser-wasm/native/include/mono-2.0"
+"-I/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Runtime.Mono.browser-wasm/10.0.0/runtimes/browser-wasm/native/include/wasm"
